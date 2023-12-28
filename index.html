@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Webmel</title>
+</head>
+
+<body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="banner">
+            <h1>Selamat Datang di Website ichaa</h1>
+        </div>
+    </section>
+
+ <div class="gallery">
+    <img src="img/feed2.png" alt="Foto 1" onclick="openLightbox('img/feed2.png')">
+    <img src="img/feed3.png" alt="Foto 2" onclick="openLightbox('img/feed3.png')">
+    <img src="img/feed4.png" alt="Foto 3" onclick="openLightbox('img/feed4.png')">
+    <img src="img/feed5.png" alt="Foto 4" onclick="openLightbox('img/feed5.png')">
+    <img src="img/feed6.png" alt="Foto 5" onclick="openLightbox('img/feed6.png')">
+    <img src="img/feed7.png" alt="Foto 6" onclick="openLightbox('img/feed7.png')">
+</div>
+
+
+<section id="kontak">
+    <h2>Kontak</h2>
+    <p>Silakan hubungi kami melalui formulir di bawah:</p>
+
+    <form action="#" method="post">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="pesan">Pesan:</label>
+        <textarea id="pesan" name="pesan" rows="4" required></textarea>
+
+        <button type="submit">Kirim Pesan</button>
+    </form>
+</section>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-btn" onclick="closeLightbox()">&times;</span>
+            <img src="" alt="Lightbox Image" id="lightbox-img">
+        </div>
+    </div>
+
+    <script>
+    function openLightbox(imgSrc) {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+
+        lightbox.style.display = 'flex';
+        lightboxImg.src = imgSrc;
+
+        // Tambahkan efek muncul
+        setTimeout(function () {
+            lightboxImg.style.transform = 'scale(1)';
+        }, 10);
+    }
+
+    function closeLightbox() {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+
+        // Tambahkan efek menutup
+        lightboxImg.style.transform = 'scale(0)';
+        
+        setTimeout(function () {
+            lightbox.style.display = 'none';
+        }, 300);
+    }
+
+    </script>
+
+</body>
+</html>
